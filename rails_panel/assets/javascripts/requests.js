@@ -12,7 +12,7 @@ var requests = {
       if (request.response.status === 500 || typeof metaRequestVersion != 'undefined') {
         scope.metaRequestVersion = metaRequestVersion.value;
         var uri = new URI(request.request.url);
-        uri.pathname('/__meta_request/' + requestId.value + '.json');
+        uri.pathname('/wom/__meta_request/' + requestId.value + '.json');
         uri.search("");
         getJSON(uri.toString(), function(data) {
           panel.addData(requestId.value, scope, data);
